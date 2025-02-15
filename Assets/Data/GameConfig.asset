@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d6d530e9207d7548a26709374aa7cd9, type: 3}
+  m_Name: GameConfig
+  m_EditorClassIdentifier: 
+  _roll:
+    _cubesCount: 5
+    _sides: 6
+    _profiles:
+    - _cubes:
+      - {fileID: -4624190453705803685, guid: d4cda6d153755514c9a5ad49dd65b47e, type: 3}
+      - {fileID: -6873146635074937120, guid: d63af57bd561e39419994d1f8d6f34b2, type: 3}
+      - {fileID: 7165899351504020413, guid: 53f61cfe1395ef2418064018bca23935, type: 3}
+      - {fileID: -1810400454224534607, guid: a91fa910af3d4134db1910967b5a52e5, type: 3}
+      - {fileID: 3706627841424581302, guid: 209c9f0c375af1f48823228fe2bd967b, type: 3}
+      - {fileID: 5325009586135030107, guid: 4d0053941a3b98940a7475cd98a27833, type: 3}
+      _animation:
+      - {fileID: -3164809056393425246, guid: c117414a5359f4945b8c6f6646bac532, type: 3}
+      - {fileID: -5225540622116197949, guid: 6b080fea2077f4c449b58bdb57155a20, type: 3}
+      - {fileID: 8793915729297761979, guid: 9eeceb08f970ac743b296fed37d0f096, type: 3}
+      - {fileID: 2750298860172458669, guid: e44c6ab1ea085ca479cf0d03eb533c6c, type: 3}
+      - {fileID: -2276259661975475453, guid: e5295dcdb59caf746bca077cf13a6d3e, type: 3}
+      - {fileID: 141893073332109768, guid: e122c213761c0344e87e85337c862ceb, type: 3}
+    - _cubes:
+      - {fileID: -6336508722098210580, guid: 7266cdb145467034fb2a3a44d6d38410, type: 3}
+      - {fileID: -774065326259138089, guid: f2a2b6e7495171f4293e59c97f127d96, type: 3}
+      - {fileID: -8781438386562367942, guid: 3fa9e20d5e75562409d4abe943e706cd, type: 3}
+      - {fileID: -888877705657002560, guid: df2c352d57d6aa54c83a4f9ea35bbf62, type: 3}
+      - {fileID: -4260345818562178818, guid: 1a34c1cd9eb93944b9366d0ba2d8df0c, type: 3}
+      - {fileID: 894388878233945364, guid: 00e174046b34d744bbf5360890da3d59, type: 3}
+      _animation:
+      - {fileID: -8321102221490951993, guid: 214f96355780dcc4b99e8c80bae87e05, type: 3}
+      - {fileID: 7417498029127908629, guid: 869887ffb0f80e143a9b31dc11d08d7c, type: 3}
+      - {fileID: 545875093725613961, guid: 81d703120ef17cb4c88c2ab68f123d67, type: 3}
+      - {fileID: 3432582381386852895, guid: c850769ba3b78c745b0a3487fe7f1c3e, type: 3}
+      - {fileID: 438895471204581479, guid: ee3f48a612698f64694fb78c44655f32, type: 3}
+      - {fileID: 8569003786385872269, guid: a8ea2f9385030ac4793abb8da247c38d, type: 3}
+  _avatars:
+    _avatars:
+    - {fileID: 1518474947638116942, guid: 718ce0e0ff9aa4b46bb9f854ae04d046, type: 3}
+    - {fileID: -8593372488338127700, guid: 0416695d2ccebb54a873e981732f06ad, type: 3}
+    - {fileID: 1117012552636458814, guid: 361187ade247eab4588a9cb56c1dbd45, type: 3}
+    - {fileID: 7139537026401834666, guid: 535b8260e7b5f0d40ada981da527466e, type: 3}
+    - {fileID: -3428518093322939279, guid: 5369864885d9cf14e99f05b70d485218, type: 3}
+    - {fileID: -5248896950586127044, guid: f18559e67ca863e498c2fca79c9fded2, type: 3}
+    _defaultIndex: 3
+    _bot: {fileID: 1117012552636458814, guid: 361187ade247eab4588a9cb56c1dbd45, type: 3}
+  _rules:
+    _rollsPerMove: 3
