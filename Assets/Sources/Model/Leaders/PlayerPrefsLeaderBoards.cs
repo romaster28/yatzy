@@ -8,7 +8,7 @@ using Zenject;
 
 namespace Sources.Model.Leaders
 {
-    public class PlayerPrefsLeadersWriter : ILeadersWriter, IInitializable
+    public class PlayerPrefsLeaderBoards : ILeaderBoards, IInitializable
     {
         private const string Key = "Leaders";
 
@@ -22,7 +22,7 @@ namespace Sources.Model.Leaders
         
         private List<LeaderInfo> _converted = new();
 
-        public PlayerPrefsLeadersWriter(LeadersConfig config)
+        public PlayerPrefsLeaderBoards(LeadersConfig config)
         {
             _config = config ?? throw new ArgumentNullException(nameof(config));
         }
@@ -46,12 +46,16 @@ namespace Sources.Model.Leaders
             Debug.Log(Saved);
         }
 
-        public IEnumerable<LeaderInfo> Read()
+        public void Read(Action<IEnumerable<LeaderInfo>> received)
         {
             _cache.Clear();
 
             if (string.IsNullOrEmpty(Saved))
-                return _cache;
+            {
+                received?.Invoke(_cache);
+                
+                return;
+            }
 
             string[] elements = Saved.Split(ElementsSeparator);
 
@@ -61,14 +65,17 @@ namespace Sources.Model.Leaders
 
                 _cache.Add(new LeaderInfo(rawSplit[0], int.Parse(rawSplit[1])));
             }
-
-            return _cache;
+            
+            received?.Invoke(_cache);
         }
 
         public void Initialize()
         {
-            _converted = Read().ToList();
-            
+            Read(delegate(IEnumerable<LeaderInfo> infos)
+            {
+                _converted = infos.ToList();
+            });
+
             Debug.Log(Saved);
         }
 

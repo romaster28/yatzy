@@ -56,3 +56,11 @@ MonoBehaviour:
     _bot: {fileID: 1117012552636458814, guid: 361187ade247eab4588a9cb56c1dbd45, type: 3}
   _rules:
     _rollsPerMove: 3
+  _bot:
+    _minThinkTime: 0.5
+    _maxThinkTime: 1.2
+  _leaders:
+    _poolCount: 12
+  _serverConfig:
+    _publicKey: 6fe06b76cd4d675cfd6b2b9cf53e10f2f830caa63581692aed621d8c228fd7c8
+    _killTime: 5

@@ -16,10 +16,12 @@ namespace Sources.CompositionRoot
         [SerializeField] private BotConfig _bot;
 
         [SerializeField] private LeadersConfig _leaders;
+
+        [SerializeField] private LeaderboardServerConfig _serverConfig;
         
         public override void InstallBindings()
         {
-            Container.BindInstances(_roll, _avatars, _rules, _bot, _leaders);
+            Container.BindInstances(_roll, _avatars, _rules, _bot, _leaders, _serverConfig);
         }
     }
 }

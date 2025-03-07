@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Sources.DomainEvent;
 using Sources.Extensions;
 using Sources.Model;
@@ -14,12 +15,12 @@ namespace Sources.ViewModel
     {
         private readonly IScreensFacade _screens;
         
-        private readonly ILeadersWriter _leadersWriter;
+        private readonly ILeaderBoards _leaderBoards;
 
-        public LeadersViewModel(IScreensFacade screens, ILeadersWriter leadersWriter)
+        public LeadersViewModel(IScreensFacade screens, ILeaderBoards leaderBoards)
         {
             _screens = screens ?? throw new ArgumentNullException(nameof(screens));
-            _leadersWriter = leadersWriter ?? throw new ArgumentNullException(nameof(leadersWriter));
+            _leaderBoards = leaderBoards ?? throw new ArgumentNullException(nameof(leaderBoards));
         }
 
         private LeadersScreen Screen => _screens.Get<LeadersScreen>();
@@ -27,7 +28,7 @@ namespace Sources.ViewModel
         public void Handle(GameEnded handle)
         {
             foreach (Player player in handle.Players) 
-                _leadersWriter.Write(player);
+                _leaderBoards.Write(player);
         }
 
         public void Handle(AppLaunched handle)
@@ -44,7 +45,10 @@ namespace Sources.ViewModel
 
         private void UpdateInfo()
         {
-            Screen.UpdateLeaders(_leadersWriter.Read());
+            _leaderBoards.Read(delegate(IEnumerable<LeaderInfo> infos)
+            {
+                Screen.UpdateLeaders(infos);
+            });
         }
     }
 }

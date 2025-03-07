@@ -5,7 +5,7 @@ namespace Sources.Extensions
 {
     public static class LeadersWriterExtensions
     {
-        public static void Write(this ILeadersWriter writer, Player player)
+        public static void Write(this ILeaderBoards writer, Player player)
         {
             writer.Write(new LeaderInfo(player.Profile.Name, player.Score.Value));
         }

@@ -7,6 +7,7 @@ using Sources.Model.Combination.Combinations;
 using Sources.Model.Game;
 using Sources.Model.Game.GameContextDecorators;
 using Sources.Model.Leaders;
+using Sources.Model.Leaders.Decorators;
 using Sources.Model.Mode;
 using Sources.Model.Mode.ConcreteModes;
 using Sources.Model.Mode.DomainEvents;
@@ -54,7 +55,9 @@ namespace Sources.CompositionRoot
 
             Container.Bind<IModesFactory>().To<ModesFactory>().AsSingle();
 
-            Container.Bind(typeof(IInitializable), typeof(ILeadersWriter)).To<PlayerPrefsLeadersWriter>().AsSingle();
+            Container.Bind(typeof(IInitializable), typeof(ILeaderBoards)).To<PlayerPrefsLeaderBoards>().AsSingle();
+
+            Container.Decorate<ILeaderBoards>().With<LeaderBoardsServerDecorator>();
 
             Container.Bind<IMode[]>().FromMethod(context => new IMode[]
             {
